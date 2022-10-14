@@ -105,7 +105,8 @@ void main(void) {
 	cout << endl << "> Stopien rekurencji [1 - 5]: ";
 	cin >> POZIOM;
 	cout << endl << "> Kolory? [1 / 0]: ";
-	cin >> KOLORY;
+	cin >> choice;
+	KOLORY = choice == 0 ? false : true;
 
 	glutInitWindowSize(600, 600);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGBA);
