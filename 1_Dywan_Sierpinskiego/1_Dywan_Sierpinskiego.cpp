@@ -11,7 +11,7 @@ float DEFORMACJA = 0.5;
 boolean KOLORY = 1;
 
 float RandomFloat() {
-	return (rand() % 100) * 0.01;
+	return (rand() % 101) * 0.01;
 }
 
 void RandomGlColor() {
@@ -57,12 +57,15 @@ void RenderCarper(GLfloat x, GLfloat y, GLfloat size, GLint level) {
 	RandomGlColor();
 	glVertex2f(x - size + def, y + def);
 	glEnd();
+
+	glFlush();
+	Sleep(0.2 * (5 - POZIOM));
 }
 
 void RenderScene(void) {
 	glClear(GL_COLOR_BUFFER_BIT);
 	RenderCarper(W_SIZE / 9, W_SIZE / 9, W_SIZE / 4.5, POZIOM);
-	glFlush();
+	//glFlush();
 }
 
 
